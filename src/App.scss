@@ -1,0 +1,102 @@
+$dark-blue:#074863;
+$lighter-blue:#1f8c9c;
+$lightest-blue:#e0eef3;
+$bg-color:#f7fdff;
+$border-color:#95c6e0;
+
+.side-container {
+  float: left;
+  width: 30%;
+  position: relative;
+}
+
+.main-container {
+  padding: 16px;
+  float: right;
+  width: calc(100% - 370px);
+}
+
+// ---------------------------------------------
+
+.header {
+  background: $dark-blue;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+// ---------------------------------------------
+
+.search-widget {
+  position: fixed;
+  top: 64px;
+  left: 16px;
+  width: 354px;
+  background: $lightest-blue;
+  padding: 16px;
+  border-bottom: 1px solid $border-color;
+}
+
+.search-option {
+  margin-bottom: 20px;
+
+  .label {
+    font-size: 14px;
+
+    padding: 0;
+    // margin-bottom: 18px !important;
+
+    color: $dark-blue;
+
+  }
+}
+
+.typeahead-input {
+  padding-bottom: 16px;
+
+  &:last-of-type {
+    padding-bottom: 0;
+  }
+}
+
+//overriding the library's css
+.select__control {
+  border-radius: 0 !important;
+  border: 1px solid $border-color !important;
+  box-shadow: none !important;
+}
+
+.select__indicator-separator,
+.select__indicators,
+.select__dropdown-indicator {
+  display: none !important;
+}
+
+//-------------------------------------------------
+
+.content {}
+
+.greeting {
+  text-align: center;
+}
+
+//------------------------------------------------
+
+@media screen and (max-width:768px) {
+  .side-container {
+    float: none;
+    width: 100%;
+    padding: 16px;
+  }
+
+  .main-container {
+    float: none;
+    width: 100%;
+  }
+
+  .search-widget {
+    position: static;
+    width: 100%;
+  }
+}
