@@ -1,0 +1,23 @@
+pipelines:
+  build-react-sample:
+    group: react-sample
+    label: "${COUNT}"
+    materials:
+      repo: {branch: master, git: 'https://github.com/dhananzen/react-select-sample.git'}
+    stages:
+    - Build-Test:
+        clean_workspace: true
+        jobs:
+          build-test:
+            tasks:
+              - exec: {command: echo "Hello world!"}
+
+    - static-code-analysis:
+        jobs:
+          sonar:
+            tasks:
+            - exec:
+                command: bash
+                arguments:
+                  - "-c"
+                  - "echo Hello World"
